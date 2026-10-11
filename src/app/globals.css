@@ -1,0 +1,680 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --radius: 0.625rem;
+  --dk-panel: #0c0a13;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* ============================================================
+   DeKo css — site-wide styles & animations
+   ============================================================ */
+
+body {
+  font-family: var(--font-vazirmatn), var(--font-geist-sans), Tahoma, ui-sans-serif,
+    system-ui, sans-serif;
+}
+
+code, pre, .font-mono {
+  font-family: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+::selection {
+  background: rgba(217, 70, 239, 0.35);
+  color: #fff;
+}
+
+/* Slim custom scrollbars */
+*::-webkit-scrollbar { width: 9px; height: 9px; }
+*::-webkit-scrollbar-track { background: transparent; }
+*::-webkit-scrollbar-thumb {
+  background: rgba(217, 70, 239, 0.35);
+  border-radius: 999px;
+}
+*::-webkit-scrollbar-thumb:hover { background: rgba(217, 70, 239, 0.6); }
+
+/* ---------- animated gradient text ---------- */
+.text-gradient-animated {
+  background: linear-gradient(90deg, #f0abfc, #fbbf24, #34d399, #67e8f9, #f0abfc);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: deko-gradient-pan 6s linear infinite;
+}
+@keyframes deko-gradient-pan {
+  to { background-position: 300% 0; }
+}
+
+/* ---------- floating hero blobs ---------- */
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  pointer-events: none;
+  animation: deko-blob-drift 14s ease-in-out infinite alternate;
+}
+.blob-2 { animation-duration: 18s; animation-delay: -6s; }
+.blob-3 { animation-duration: 22s; animation-delay: -11s; }
+@keyframes deko-blob-drift {
+  from { transform: translate(0, 0) scale(1); }
+  to { transform: translate(60px, -40px) scale(1.18); }
+}
+
+/* ---------- floating code chips ---------- */
+.float-chip {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+  animation: deko-float-y 6s ease-in-out infinite;
+}
+.float-chip-2 { animation-delay: -2s; animation-duration: 7s; }
+.float-chip-3 { animation-delay: -4s; animation-duration: 8s; }
+.float-chip-4 { animation-delay: -1s; animation-duration: 6.5s; }
+@keyframes deko-float-y {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50% { transform: translateY(-18px) rotate(3deg); }
+}
+
+/* ---------- entrance animations ---------- */
+.fade-up {
+  opacity: 0;
+  animation: deko-fade-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+@keyframes deko-fade-up {
+  from { opacity: 0; transform: translateY(22px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- render performance for huge grids ---------- */
+.cv-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 360px;
+}
+
+/* ---------- marquee ---------- */
+.marquee {
+  overflow: hidden;
+  white-space: nowrap;
+}
+.marquee-track {
+  display: inline-block;
+  animation: deko-marquee 26s linear infinite;
+}
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+@keyframes deko-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ---------- pulsing heart in footer ---------- */
+.heart-beat {
+  display: inline-block;
+  animation: deko-heart 1.4s ease-in-out infinite;
+}
+@keyframes deko-heart {
+  0%, 100% { transform: scale(1); }
+  12% { transform: scale(1.28); }
+  24% { transform: scale(1); }
+  36% { transform: scale(1.2); }
+  48% { transform: scale(1); }
+}
+
+/* ---------- slow spin for decorative shapes ---------- */
+.spin-slow {
+  animation: deko-spin 22s linear infinite;
+}
+@keyframes deko-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ---------- animated underline for logo ---------- */
+.logo-underline {
+  background-image: linear-gradient(90deg, #f0abfc, #fbbf24);
+  background-repeat: no-repeat;
+  background-size: 0% 2px;
+  background-position: 0 100%;
+  transition: background-size 0.35s ease;
+}
+.logo-underline:hover {
+  background-size: 100% 2px;
+}
+
+/* ============================================================
+   DeKo css — 3D homepage styles
+   ============================================================ */
+
+/* ---------- spatial grid floor (hero) ---------- */
+.grid-floor {
+  background-image:
+    linear-gradient(rgba(169, 35, 244, 0.18) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(103, 232, 249, 0.12) 1px, transparent 1px);
+  background-size: 44px 44px;
+  transform: perspective(600px) rotateX(58deg) scale(1.6);
+  transform-origin: center bottom;
+  mask-image: linear-gradient(to top, black 30%, transparent 92%);
+  -webkit-mask-image: linear-gradient(to top, black 30%, transparent 92%);
+  animation: deko-grid-pan 9s linear infinite;
+}
+@keyframes deko-grid-pan {
+  to { background-position: 44px 0, 0 0; }
+}
+
+/* ---------- floating 3D panels (hero) ---------- */
+.hero-3d { perspective: 1200px; }
+.panel3d {
+  position: absolute;
+  width: 232px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: linear-gradient(160deg, rgba(33, 24, 47, 0.92), rgba(15, 11, 26, 0.92));
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.5),
+    0 0 40px rgba(169, 35, 244, 0.14);
+  padding: 10px;
+  transform-style: preserve-3d;
+  animation: deko-panel-float 9s ease-in-out infinite;
+}
+.panel3d-1 { top: 13%; left: 4%; transform: rotateY(14deg) rotateX(4deg); }
+.panel3d-2 { top: 22%; right: 5%; transform: rotateY(-14deg) rotateX(-4deg); animation-delay: -3s; }
+.panel3d-3 { bottom: 9%; left: 13%; transform: rotateY(10deg) rotateX(6deg) scale(0.92); animation-delay: -6s; }
+@keyframes deko-panel-float {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -16px; }
+}
+.panel-bar { display: flex; gap: 4px; margin-bottom: 8px; }
+.panel-bar i {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+}
+.panel-hero {
+  height: 64px;
+  border-radius: 8px;
+  background:
+    radial-gradient(120% 130% at 10% 0%, rgba(217, 70, 239, 0.5), transparent 60%),
+    radial-gradient(120% 130% at 95% 20%, rgba(71, 229, 208, 0.4), transparent 55%),
+    rgba(255, 255, 255, 0.05);
+  margin-bottom: 8px;
+}
+.panel-lines { display: flex; flex-direction: column; gap: 5px; margin-bottom: 8px; }
+.panel-lines i {
+  height: 6px; border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+}
+.panel-cards { display: flex; gap: 6px; }
+.panel-cards i {
+  flex: 1; height: 34px; border-radius: 7px;
+  background: linear-gradient(150deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.03));
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+/* ---------- category card lift ---------- */
+.cat-card:hover { transform: translateY(-4px); }
+.tpl-card {
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease, border-color 0.3s ease;
+  will-change: transform;
+}
+.tpl-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 22px 48px rgba(0, 0, 0, 0.45), 0 0 26px rgba(169, 35, 244, 0.08);
+}
+
+/* ---------- live mini demos (effects teaser) ---------- */
+.fx-home-demo { animation: deko-float-y 6s ease-in-out infinite; }
+.fx-home-b { animation-delay: -1.5s; }
+.fx-home-c { animation-delay: -3s; }
+.fx-home-d { animation-delay: -4.5s; }
+.pulse-dot {
+  display: block;
+  width: 22px; height: 22px; border-radius: 50%;
+  background: linear-gradient(135deg, #d946ef, #8b5cf6);
+  animation: deko-home-pulse 1.8s ease-in-out infinite;
+}
+@keyframes deko-home-pulse {
+  0%, 100% { transform: scale(0.72); opacity: 0.55; }
+  50% { transform: scale(1.15); opacity: 1; }
+}
+.spin-ring {
+  display: block;
+  width: 24px; height: 24px; border-radius: 50%;
+  border: 3px solid rgba(103, 232, 249, 0.25);
+  border-top-color: #22d3ee;
+  animation: deko-spin 1.1s linear infinite;
+}
+.bounce-square {
+  display: block;
+  width: 20px; height: 20px; border-radius: 6px;
+  background: linear-gradient(135deg, #fbbf24, #f472b6);
+  animation: deko-home-bounce 1.4s cubic-bezier(0.28, 0.84, 0.42, 1) infinite;
+}
+@keyframes deko-home-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-16px); }
+}
+.gradient-orb {
+  display: block;
+  width: 26px; height: 26px; border-radius: 50%;
+  background: conic-gradient(#d946ef, #22d3ee, #34d399, #fbbf24, #d946ef);
+  animation: deko-spin 4s linear infinite;
+  filter: saturate(1.3);
+}
+
+/* ---------- respect reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .grid-floor,
+  .panel3d,
+  .fx-home-demo,
+  .pulse-dot,
+  .spin-ring,
+  .bounce-square,
+  .gradient-orb,
+  .blob,
+  .float-chip,
+  .marquee-track,
+  .heart-beat,
+  .spin-slow,
+  .aurora,
+  .orb3d,
+  .cube3d-deco,
+  .ring3d-deco {
+    animation: none !important;
+  }
+  .fade-up,
+  .reveal { opacity: 1 !important; transform: none !important; animation: none !important; }
+}
+
+/* ============================================================
+   DeKo css — DAY (light) THEME
+   html.light remaps the dark site palette to a soft daylight one.
+   Effect demo stages intentionally stay dark (self-contained screens).
+   ============================================================ */
+html.light { color-scheme: light; }
+
+html.light body {
+  background: #f4f2fb;
+}
+
+/* page shells */
+html.light { --dk-panel: #ffffff; }
+html.light .bg-\[\#0a0812\] { background-color: #f4f2fb; }
+html.light .bg-\[\#0d0a15\] { background-color: #f9f7fd; }
+html.light .bg-\[\#12101c\] { background-color: #ffffff; }
+html.light .bg-\[\#1b1526\] { background-color: #f1edfa; }
+html.light .bg-\[\#0b0912\]\/85 { background-color: rgba(255, 255, 255, 0.82); }
+html.light .bg-\[\#0b0912\]\/95 { background-color: rgba(255, 255, 255, 0.94); }
+html.light [class*="bg-\[\#0b0912\]"] { backdrop-filter: blur(18px); }
+
+/* zinc text scale */
+html.light .text-zinc-100 { color: #241d36; }
+html.light .text-zinc-200 { color: #2c2444; }
+html.light .text-zinc-300 { color: #453c60; }
+html.light .text-zinc-400 { color: #675e82; }
+html.light .text-zinc-500 { color: #857ba0; }
+html.light .text-zinc-600 { color: #a79fc0; }
+
+/* accent text scale (contrast on light surfaces) */
+html.light .text-fuchsia-200 { color: #a21caf; }
+html.light .text-fuchsia-300 { color: #a21caf; }
+html.light .text-cyan-200 { color: #0e7490; }
+html.light .text-cyan-300 { color: #0891b2; }
+html.light .text-amber-300 { color: #b45309; }
+html.light .text-emerald-300 { color: #047857; }
+html.light .text-violet-300 { color: #6d28d9; }
+html.light .text-rose-300 { color: #be123c; }
+html.light .text-orange-300 { color: #c2410c; }
+html.light .text-teal-300 { color: #0f766e; }
+html.light .text-lime-300 { color: #4d7c0f; }
+html.light .text-green-300 { color: #15803d; }
+html.light .text-red-300 { color: #b91c1c; }
+html.light .text-yellow-300 { color: #a16207; }
+html.light .text-pink-300 { color: #be185d; }
+html.light .text-stone-300 { color: #57534e; }
+
+/* white-alpha borders & surfaces → ink-alpha */
+html.light .border-white\/10 { border-color: rgba(35, 22, 70, 0.12); }
+html.light .border-white\/15 { border-color: rgba(35, 22, 70, 0.16); }
+html.light .border-white\/\[0\.05\] { border-color: rgba(35, 22, 70, 0.07); }
+html.light .border-white\/\[0\.06\] { border-color: rgba(35, 22, 70, 0.08); }
+html.light .border-white\/\[0\.07\] { border-color: rgba(35, 22, 70, 0.10); }
+html.light .bg-white\/\[0\.02\] { background-color: rgba(35, 22, 70, 0.03); }
+html.light .bg-white\/\[0\.03\] { background-color: rgba(35, 22, 70, 0.04); }
+html.light .bg-white\/\[0\.04\] { background-color: rgba(35, 22, 70, 0.05); }
+html.light .bg-white\/\[0\.05\] { background-color: rgba(35, 22, 70, 0.06); }
+html.light .bg-white\/\[0\.06\] { background-color: rgba(35, 22, 70, 0.08); }
+html.light .bg-white\/10 { background-color: rgba(35, 22, 70, 0.10); }
+html.light .bg-white\/15 { background-color: rgba(35, 22, 70, 0.14); }
+html.light .hover\:bg-white\/\[0\.05\]:hover { background-color: rgba(35, 22, 70, 0.06); }
+html.light .hover\:bg-white\/\[0\.05\] { background-color: rgba(35, 22, 70, 0.04); }
+
+/* hero decor in daylight */
+html.light .panel3d {
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.94), rgba(244, 242, 251, 0.94));
+  border-color: rgba(35, 22, 70, 0.10);
+  box-shadow: 0 24px 60px rgba(80, 50, 160, 0.14), 0 0 40px rgba(169, 35, 244, 0.08);
+}
+html.light .panel-bar i { background: rgba(35, 22, 70, 0.16); }
+html.light .panel-lines i { background: rgba(35, 22, 70, 0.10); }
+html.light .panel-cards i {
+  background: linear-gradient(150deg, rgba(35, 22, 70, 0.07), rgba(35, 22, 70, 0.03));
+  border-color: rgba(35, 22, 70, 0.07);
+}
+html.light .grid-floor { opacity: 0.22; }
+
+/* smooth theme switch */
+body,
+header,
+footer,
+article,
+.bg-white\/\[0\.03\],
+.border-white\/\[0\.07\] {
+  transition-property: background-color, border-color, color;
+  transition-duration: 0.35s;
+  transition-timing-function: ease;
+}
+
+/* ============================================================
+   DeKo css — EXTRA SITE ANIMATIONS & 3D (v2 upgrade)
+   ============================================================ */
+
+/* ---------- aurora ribbons (hero) ---------- */
+.aurora {
+  position: absolute;
+  inset: -30% -10%;
+  pointer-events: none;
+  background:
+    radial-gradient(38% 55% at 18% 30%, rgba(217, 70, 239, 0.20), transparent 70%),
+    radial-gradient(30% 48% at 78% 18%, rgba(34, 211, 238, 0.16), transparent 70%),
+    radial-gradient(42% 44% at 55% 85%, rgba(167, 139, 250, 0.15), transparent 72%);
+  filter: blur(30px);
+  animation: deko-aurora-sway 16s ease-in-out infinite alternate;
+}
+@keyframes deko-aurora-sway {
+  0% { transform: translate3d(-2%, -1%, 0) rotate(-1.2deg) scale(1); }
+  50% { transform: translate3d(2%, 2%, 0) rotate(1deg) scale(1.06); }
+  100% { transform: translate3d(-1%, 1%, 0) rotate(-0.6deg) scale(1.02); }
+}
+
+/* ---------- floating 3D ring decoration ---------- */
+.ring3d-deco {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid rgba(217, 70, 239, 0.35);
+  border-top-color: rgba(103, 232, 249, 0.7);
+  border-bottom-color: rgba(251, 191, 36, 0.5);
+  transform: rotateX(64deg) rotateZ(0deg);
+  animation: deko-ring-tilt 12s linear infinite;
+  pointer-events: none;
+}
+@keyframes deko-ring-tilt {
+  from { transform: rotateX(64deg) rotateZ(0deg); }
+  to { transform: rotateX(64deg) rotateZ(360deg); }
+}
+
+/* ---------- floating 3D cube decoration ---------- */
+.cube3d-deco {
+  position: absolute;
+  width: 54px;
+  height: 54px;
+  transform-style: preserve-3d;
+  animation: deko-cube-tumble 14s linear infinite;
+  pointer-events: none;
+}
+.cube3d-deco i {
+  position: absolute;
+  inset: 0;
+  border: 1.5px solid rgba(103, 232, 249, 0.5);
+  background: linear-gradient(135deg, rgba(34, 211, 238, 0.10), rgba(217, 70, 239, 0.08));
+  border-radius: 8px;
+}
+.cube3d-deco i:nth-child(1) { transform: translateZ(27px); }
+.cube3d-deco i:nth-child(2) { transform: rotateY(180deg) translateZ(27px); }
+.cube3d-deco i:nth-child(3) { transform: rotateY(90deg) translateZ(27px); }
+.cube3d-deco i:nth-child(4) { transform: rotateY(-90deg) translateZ(27px); }
+.cube3d-deco i:nth-child(5) { transform: rotateX(90deg) translateZ(27px); }
+.cube3d-deco i:nth-child(6) { transform: rotateX(-90deg) translateZ(27px); }
+@keyframes deko-cube-tumble {
+  from { transform: rotateX(0deg) rotateY(0deg) translateY(0); }
+  50% { transform: rotateX(180deg) rotateY(180deg) translateY(-16px); }
+  to { transform: rotateX(360deg) rotateY(360deg) translateY(0); }
+}
+
+/* ---------- glowing orb decoration ---------- */
+.orb3d {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 32% 28%, #fbcfe8, #d946ef 45%, #701a75 90%);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35), 0 0 24px rgba(217, 70, 239, 0.35);
+  animation: deko-orb-bounce 6s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes deko-orb-bounce {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-20px) scale(1.05); }
+}
+
+/* ---------- scroll reveal ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- pointer-tracked 3D tilt ---------- */
+.tilt3d {
+  transform: perspective(700px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateZ(0);
+  transition: transform 0.25s ease-out;
+  will-change: transform;
+}
+
+/* ---------- section title sparkle ---------- */
+.sparkle-word { position: relative; display: inline-block; }
+.sparkle-word::after {
+  content: "✦";
+  position: absolute;
+  top: -10px;
+  inset-inline-end: -16px;
+  font-size: 13px;
+  color: #fbbf24;
+  animation: deko-sparkle 2.6s ease-in-out infinite;
+}
+@keyframes deko-sparkle {
+  0%, 100% { opacity: 0.25; transform: scale(0.7) rotate(0deg); }
+  50% { opacity: 1; transform: scale(1.15) rotate(40deg); }
+}
+
+/* ---------- back to top progress ring ---------- */
+.backtop-wrap { position: fixed; bottom: 22px; inset-inline-end: 22px; z-index: 50; }
+.backtop-btn {
+  position: relative;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  background: linear-gradient(135deg, #a923f4, #7c3aed);
+  box-shadow: 0 10px 26px rgba(169, 35, 244, 0.45);
+  transition: transform 0.25s ease, opacity 0.3s ease;
+  opacity: 0;
+  transform: translateY(14px) scale(0.85);
+  pointer-events: none;
+}
+.backtop-btn.show { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+.backtop-btn:hover { transform: translateY(-3px) scale(1.06); }
+.backtop-btn svg.ring { position: absolute; inset: -4px; transform: rotate(-90deg); }
+.backtop-btn svg.ring circle {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.85);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-dasharray: 151;
+  stroke-dashoffset: var(--progress, 151);
+}
+
+/* ---------- animated conic glow for primary CTA ---------- */
+.cta-glow { position: relative; isolation: isolate; }
+.cta-glow::before {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: inherit;
+  background: conic-gradient(#d946ef, #22d3ee, #fbbf24, #d946ef);
+  z-index: -1;
+  animation: deko-spin 3.5s linear infinite;
+  filter: blur(8px);
+  opacity: 0.55;
+}
+.cta-glow:hover::before { opacity: 0.85; }
+
+/* ---------- marquee chip ---------- */
+.marquee-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0 5px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  background: rgba(255, 255, 255, 0.03);
+  font-size: 12px;
+  color: #a1a1aa;
+  white-space: nowrap;
+}
+html.light .marquee-chip {
+  border-color: rgba(35, 22, 70, 0.10);
+  background: rgba(35, 22, 70, 0.04);
+  color: #675e82;
+}
+.marquee-chip i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #d946ef, #22d3ee);
+}

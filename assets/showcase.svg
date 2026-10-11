@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="270" viewBox="0 0 1200 270" font-family="'Vazirmatn','Segoe UI','Helvetica Neue',Arial,sans-serif">
+<defs>
+<linearGradient id="gb" x1="0" y1="0" x2="1" y2="0">
+ <stop offset="0" stop-color="#ff6ec4"><animate attributeName="stop-color" values="#ff6ec4;#a855f7;#fb923c;#ff6ec4" dur="4s" repeatCount="indefinite"/></stop>
+ <stop offset="1" stop-color="#a855f7"><animate attributeName="stop-color" values="#a855f7;#fb923c;#ff6ec4;#a855f7" dur="4s" repeatCount="indefinite"/></stop></linearGradient>
+<filter id="blur8"><feGaussianBlur stdDeviation="8"/></filter>
+<linearGradient id="spin" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset="1" stop-color="#d946ef"/></linearGradient></defs>
+
+<g transform="translate(30 14)">
+ <rect width="270" height="240" rx="20" fill="#0e0c19" stroke="#ffffff" stroke-opacity="0.12"/>
+ <rect x="0" y="0" width="270" height="150" rx="20" fill="#08070f"/>
+ <rect x="0" y="130" width="270" height="20" fill="#08070f"/>
+ <g><rect x="55" y="52" width="160" height="48" rx="24" fill="url(#gb)"/>
+ <text x="135" y="82" font-size="17" font-weight="700" fill="#fff" text-anchor="middle">Hover Me</text>
+ <animateTransform attributeName="transform" type="translate" values="0 0;0 -5;0 0" dur="2.2s" repeatCount="indefinite"/></g>
+ <text x="135" y="188" font-size="17" font-weight="700" fill="#f4f4f5" text-anchor="middle">Animated gradient</text>
+ <text x="135" y="212" font-size="14" fill="#71717a" text-anchor="middle">گرادیان متحرک</text>
+</g>
+<g transform="translate(320 14)">
+ <rect width="270" height="240" rx="20" fill="#0e0c19" stroke="#ffffff" stroke-opacity="0.12"/>
+ <rect x="0" y="0" width="270" height="150" rx="20" fill="#08070f"/>
+ <rect x="0" y="130" width="270" height="20" fill="#08070f"/>
+ <rect x="55" y="52" width="160" height="48" rx="8" fill="none" stroke="#d946ef" stroke-width="3" filter="url(#blur8)"><animate attributeName="opacity" values="0.35;1;0.35" dur="2s" repeatCount="indefinite"/></rect>
+ <rect x="55" y="52" width="160" height="48" rx="8" fill="none" stroke="#d946ef" stroke-width="2.5"/>
+ <text x="135" y="82" font-size="16" font-weight="800" fill="#d946ef" text-anchor="middle" letter-spacing="4">NEON</text>
+ <text x="135" y="188" font-size="17" font-weight="700" fill="#f4f4f5" text-anchor="middle">Neon glow</text>
+ <text x="135" y="212" font-size="14" fill="#71717a" text-anchor="middle">درخشش نئون</text>
+</g>
+<g transform="translate(610 14)">
+ <rect width="270" height="240" rx="20" fill="#0e0c19" stroke="#ffffff" stroke-opacity="0.12"/>
+ <rect x="0" y="0" width="270" height="150" rx="20" fill="#08070f"/>
+ <rect x="0" y="130" width="270" height="20" fill="#08070f"/><circle cx="95" cy="88" r="11" fill="#d946ef"><animate attributeName="cy" values="88;58;88" dur="0.9s" begin="0.0s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/></circle><circle cx="135" cy="88" r="11" fill="#f59e0b"><animate attributeName="cy" values="88;58;88" dur="0.9s" begin="0.15s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/></circle><circle cx="175" cy="88" r="11" fill="#22d3ee"><animate attributeName="cy" values="88;58;88" dur="0.9s" begin="0.3s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/></circle>
+ <text x="135" y="188" font-size="17" font-weight="700" fill="#f4f4f5" text-anchor="middle">Bouncing loader</text>
+ <text x="135" y="212" font-size="14" fill="#71717a" text-anchor="middle">لودر پرشی</text>
+</g>
+<g transform="translate(900 14)">
+ <rect width="270" height="240" rx="20" fill="#0e0c19" stroke="#ffffff" stroke-opacity="0.12"/>
+ <rect x="0" y="0" width="270" height="150" rx="20" fill="#08070f"/>
+ <rect x="0" y="130" width="270" height="20" fill="#08070f"/>
+ <circle cx="135" cy="76" r="30" fill="none" stroke="#ffffff" stroke-opacity="0.08" stroke-width="7"/>
+ <path d="M135 46 A30 30 0 0 1 165 76" fill="none" stroke="url(#spin)" stroke-width="7" stroke-linecap="round"><animateTransform attributeName="transform" type="rotate" from="0 135 76" to="360 135 76" dur="1.2s" repeatCount="indefinite"/></path>
+ <text x="135" y="188" font-size="17" font-weight="700" fill="#f4f4f5" text-anchor="middle">Gradient spinner</text>
+ <text x="135" y="212" font-size="14" fill="#71717a" text-anchor="middle">اسپینر گرادیانی</text>
+</g>
+</svg>

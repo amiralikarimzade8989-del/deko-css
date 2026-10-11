@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="150" viewBox="0 0 1200 150" font-family="'Vazirmatn','Segoe UI','Helvetica Neue',Arial,sans-serif">
+<defs><linearGradient id="f" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#22d3ee"/><stop offset="0.5" stop-color="#d946ef"/><stop offset="1" stop-color="#f59e0b"/></linearGradient></defs>
+<rect width="1200" height="150" rx="22" fill="#0e0c19" stroke="#ffffff" stroke-opacity="0.12"/>
+<rect x="520" y="22" width="160" height="3" rx="1.5" fill="url(#f)"><animate attributeName="width" values="40;320;40" dur="5s" repeatCount="indefinite"/><animate attributeName="x" values="580;440;580" dur="5s" repeatCount="indefinite"/></rect>
+<text x="600" y="66" font-size="26" font-weight="800" fill="url(#f)" text-anchor="middle">Built by Amirali Karimzadeh</text>
+<text x="600" y="100" font-size="20" fill="#d4d4d8" text-anchor="middle">ساخته شده توسط امیر علی کریم زاده</text>
+<text x="600" y="130" font-size="14" fill="#71717a" text-anchor="middle">AI · Vibe Coding · Web &amp; Mobile — freelancer</text>
+</svg>

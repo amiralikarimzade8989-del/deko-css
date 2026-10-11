@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="160" viewBox="0 0 1200 160" font-family="'Vazirmatn','Segoe UI','Helvetica Neue',Arial,sans-serif">
+<defs></defs>
+
+<g transform="translate(30 14)">
+ <rect width="270" height="130" rx="20" fill="#12101f" stroke="#d946ef" stroke-opacity="0.35"/>
+ <rect width="270" height="130" rx="20" fill="#d946ef" fill-opacity="0.06"><animate attributeName="fill-opacity" values="0.03;0.12;0.03" dur="4s" repeatCount="indefinite"/></rect>
+ <text x="135" y="68" font-size="48" font-weight="900" fill="#d946ef" text-anchor="middle">1,053
+  <animate attributeName="opacity" values="0;1" dur="0.9s" begin="0.0s" fill="freeze"/></text>
+ <text x="135" y="96" font-size="15" font-weight="600" fill="#e4e4e7" text-anchor="middle">CSS effects</text>
+ <text x="135" y="116" font-size="13" fill="#71717a" text-anchor="middle">افکت</text>
+ <animateTransform attributeName="transform" type="translate" values="30 14;30 8;30 14" dur="5.0s" repeatCount="indefinite"/>
+</g>
+<g transform="translate(320 14)">
+ <rect width="270" height="130" rx="20" fill="#12101f" stroke="#f59e0b" stroke-opacity="0.35"/>
+ <rect width="270" height="130" rx="20" fill="#f59e0b" fill-opacity="0.06"><animate attributeName="fill-opacity" values="0.03;0.12;0.03" dur="5s" repeatCount="indefinite"/></rect>
+ <text x="135" y="68" font-size="48" font-weight="900" fill="#f59e0b" text-anchor="middle">15
+  <animate attributeName="opacity" values="0;1" dur="0.9s" begin="0.2s" fill="freeze"/></text>
+ <text x="135" y="96" font-size="15" font-weight="600" fill="#e4e4e7" text-anchor="middle">categories</text>
+ <text x="135" y="116" font-size="13" fill="#71717a" text-anchor="middle">دسته‌بندی</text>
+ <animateTransform attributeName="transform" type="translate" values="320 14;320 8;320 14" dur="5.6s" repeatCount="indefinite"/>
+</g>
+<g transform="translate(610 14)">
+ <rect width="270" height="130" rx="20" fill="#12101f" stroke="#22d3ee" stroke-opacity="0.35"/>
+ <rect width="270" height="130" rx="20" fill="#22d3ee" fill-opacity="0.06"><animate attributeName="fill-opacity" values="0.03;0.12;0.03" dur="6s" repeatCount="indefinite"/></rect>
+ <text x="135" y="68" font-size="48" font-weight="900" fill="#22d3ee" text-anchor="middle">4
+  <animate attributeName="opacity" values="0;1" dur="0.9s" begin="0.4s" fill="freeze"/></text>
+ <text x="135" y="96" font-size="15" font-weight="600" fill="#e4e4e7" text-anchor="middle">design tools</text>
+ <text x="135" y="116" font-size="13" fill="#71717a" text-anchor="middle">ابزار طراحی</text>
+ <animateTransform attributeName="transform" type="translate" values="610 14;610 8;610 14" dur="6.2s" repeatCount="indefinite"/>
+</g>
+<g transform="translate(900 14)">
+ <rect width="270" height="130" rx="20" fill="#12101f" stroke="#4ade80" stroke-opacity="0.35"/>
+ <rect width="270" height="130" rx="20" fill="#4ade80" fill-opacity="0.06"><animate attributeName="fill-opacity" values="0.03;0.12;0.03" dur="7s" repeatCount="indefinite"/></rect>
+ <text x="135" y="68" font-size="48" font-weight="900" fill="#4ade80" text-anchor="middle">0
+  <animate attributeName="opacity" values="0;1" dur="0.9s" begin="0.6000000000000001s" fill="freeze"/></text>
+ <text x="135" y="96" font-size="15" font-weight="600" fill="#e4e4e7" text-anchor="middle">dependencies per effect</text>
+ <text x="135" y="116" font-size="13" fill="#71717a" text-anchor="middle">وابستگی</text>
+ <animateTransform attributeName="transform" type="translate" values="900 14;900 8;900 14" dur="6.8s" repeatCount="indefinite"/>
+</g>
+</svg>
