@@ -227,6 +227,6 @@ please keep the copyright notice.
 
 <br/>
 
-[**GitHub**](https://github.com/amiralikarimzade8989-del) · [**Email**](mailto:amiralikarimzade8989@gmail.com)
+[**GitHub**](https://github.com/amiralikarimzade8989-del) · [**Email**](mailto:amiralikarimzade8989@gmail.com) .[**link project**](https://deko-css.vercel.app/)
 
 </div>
